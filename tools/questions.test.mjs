@@ -186,7 +186,9 @@ test("bonus source controls keep compact visible text, accessible metadata and o
     assert.equal(compact,`<ul class="official-references"><li><strong>${ref}</strong> ${data.subcompetencies[ref]}</li></ul>`);
   }
   const css=readFileSync(new URL("../styles.css",import.meta.url),"utf8");
-  assert.match(css,/\.competency-definition\{[^}]*margin:4px 0 14px 12px;[^}]*font-style:italic;[^}]*line-height:1\.55/);
+  assert.match(css,/--space-2xs:\s*4px;/);
+  assert.match(css,/--space-sm:\s*12px;/);
+  assert.match(css,/\.competency-definition\{[^}]*margin:var\(--space-2xs\) 0 14px var\(--space-sm\);[^}]*font-style:italic;[^}]*line-height:1\.55/);
   assert.match(css,/\.competency-reference \.official-references li\+li\{margin-top:6px\}/);
   assert.match(css,/\.competency-reference \.bonus-invitation-help\{[^}]*display:block;[^}]*font-weight:400;[^}]*color:var\(--supporting\)/);
 });

@@ -1215,7 +1215,7 @@
     ["practice.js?v=17",window.PRACTICE?.uiVersion===17],
     ["exam.js?v=14",window.EXAM?.uiVersion===14],
     ["content.js?v=13",window.STUDY?.uiVersion===13],
-    ["styles.css?v=28",!!document.querySelector('link[href="styles.css?v=28"]')]
+    ["styles.css?v=30",!!document.querySelector('link[href="styles.css?v=30"]')]
   ].filter(([,ready])=>!ready);
   if(!assets.length)start();
   else Promise.all(assets.map(([source])=>new Promise((resolve,reject)=>{
